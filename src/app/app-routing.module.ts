@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   { 
     path: 'dashboard', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-    canMatch: [AuthorizedGuard]
+    canMatch: [AuthorizedGuard],
   },
   { 
     path: 'category', loadChildren: () => import('./modules/category/category.module').then(m => m.CategoryModule)

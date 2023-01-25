@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SpentComponent } from './spent.component';
+import { SpentComponent } from './pages';
 
 const routes: Routes = [{ path: '', component: SpentComponent }];
 

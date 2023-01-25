@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SpentRoutingModule } from './spent-routing.module';
-import { SpentComponent } from './spent.component';
-
+import { SpentComponent } from './pages';
 
 @NgModule({
   declarations: [

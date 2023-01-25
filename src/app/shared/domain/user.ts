@@ -4,5 +4,5 @@ export interface User {
   login: string;
   email: string;
   name: string;
-  profiles: Profile[]
+  profiles: Profile[];
 }
