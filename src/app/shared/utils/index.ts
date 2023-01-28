@@ -7,5 +7,5 @@ export function isNotNullOrUndefined<T>(valor: T): valor is T {
 }
 
 export function isEmpty<T>(valor: any): valor is null | undefined | '' {
-  return isNullOrUndefined(valor) || valor === ''
+  return isNullOrUndefined(valor) || valor === '';
 }

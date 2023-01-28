@@ -7,10 +7,9 @@ import { User } from 'src/app/shared/domain/user';
 @Component({
   selector: 'fin-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent {
-
   form: FormGroup;
 
   constructor(
@@ -18,12 +17,10 @@ export class SignupComponent {
     private authService: AuthService,
     private router: Router
   ) {
-    this.form = formBuilder.group(
-      {
-        name: [{value: undefined, disabled: false}, Validators.required],
-        email: [{value: undefined, disabled: false}, Validators.required],
-      }
-    )
+    this.form = formBuilder.group({
+      name: [{ value: undefined, disabled: false }, Validators.required],
+      email: [{ value: undefined, disabled: false }, Validators.required],
+    });
   }
 
   salvar(): void {
@@ -33,13 +30,11 @@ export class SignupComponent {
       login: name,
       profiles: [0],
       name,
-      email
-    }
+      email,
+    };
 
-    this.authService.newUser(user).subscribe(
-      {
-        next: () => this.router.navigateByUrl('/auth')
-      }
-    );
+    this.authService.newUser(user).subscribe({
+      next: () => this.router.navigateByUrl('/auth'),
+    });
   }
 }

@@ -1,16 +1,29 @@
 <form [formGroup]="form">
   <div>
     <label for="name">Nome</label>
-    <input type="text" id="name" formControlName="name">
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+    />
   </div>
 
   <div>
     <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email">
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+    />
   </div>
 
   <div>
-    <button [disabled]="form.invalid" (click)="salvar()">Cadastrar</button>
+    <button
+      [disabled]="form.invalid"
+      (click)="salvar()"
+    >
+      Cadastrar
+    </button>
     <a routerLink="/">
       <button>Login</button>
     </a>

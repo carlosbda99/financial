@@ -1,3 +1,3 @@
-import { CategoryComponent } from "./main/category.component";
+import { CategoryComponent } from './main/category.component';
 
 export { CategoryComponent };

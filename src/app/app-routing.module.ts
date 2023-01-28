@@ -7,33 +7,44 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'dashboard'
+    redirectTo: 'dashboard',
   },
-  { 
-    path: 'spent', loadChildren: () => import('./modules/spent/spent.module').then(m => m.SpentModule),
-    canMatch: [AuthorizedGuard]
-  },
-  { 
-    path: 'dashboard', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+  {
+    path: 'spent',
+    loadChildren: () =>
+      import('./modules/spent/spent.module').then((m) => m.SpentModule),
     canMatch: [AuthorizedGuard],
   },
-  { 
-    path: 'category', loadChildren: () => import('./modules/category/category.module').then(m => m.CategoryModule)
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./modules/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
+    canMatch: [AuthorizedGuard],
   },
-  { 
-    path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-    canActivate: [GuestGuard]
+  {
+    path: 'category',
+    loadChildren: () =>
+      import('./modules/category/category.module').then(
+        (m) => m.CategoryModule
+      ),
   },
-  // { 
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [GuestGuard],
+  },
+  // {
   //   path: 'e', loadChildren: () => import('./handlers/handlers.module').then(m => m.HandlersModule)
   // },
-  // { 
+  // {
   //   path: '**', redirectTo: 'e/not-found'
   // }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

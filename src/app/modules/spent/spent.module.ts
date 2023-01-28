@@ -4,12 +4,7 @@ import { SpentRoutingModule } from './spent-routing.module';
 import { SpentComponent } from './pages';
 
 @NgModule({
-  declarations: [
-    SpentComponent
-  ],
-  imports: [
-    CommonModule,
-    SpentRoutingModule
-  ]
+  declarations: [SpentComponent],
+  imports: [CommonModule, SpentRoutingModule],
 })
-export class SpentModule { }
+export class SpentModule {}

@@ -1,4 +1,4 @@
-import { Profile } from "../enums/profile";
+import { Profile } from '../enums/profile';
 
 export interface User {
   login: string;

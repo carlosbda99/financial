@@ -1,4 +1,4 @@
 export enum Profile {
   COMMON,
-  ADMIN
+  ADMIN,
 }

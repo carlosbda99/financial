@@ -1,3 +1,3 @@
-import { DashboardComponent } from "./main/dashboard.component";
+import { DashboardComponent } from './main/dashboard.component';
 
 export { DashboardComponent };

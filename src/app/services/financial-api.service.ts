@@ -4,14 +4,15 @@ import { environment } from 'src/environments/environment.development';
 import { ApiService } from './api.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export abstract class FinancialApiService extends ApiService {
-
-  constructor(path: string, http: HttpClient) { 
+  constructor(path: string, http: HttpClient) {
     super(
       path
-        ? `${environment.api.endpointBase}${path.startsWith('/') ? path : `/${path}`}`
+        ? `${environment.api.endpointBase}${
+            path.startsWith('/') ? path : `/${path}`
+          }`
         : environment.api.endpointBase,
       http
     );

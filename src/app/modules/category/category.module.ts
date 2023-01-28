@@ -4,12 +4,7 @@ import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './pages';
 
 @NgModule({
-  declarations: [
-    CategoryComponent
-  ],
-  imports: [
-    CommonModule,
-    CategoryRoutingModule
-  ]
+  declarations: [CategoryComponent],
+  imports: [CommonModule, CategoryRoutingModule],
 })
-export class CategoryModule { }
+export class CategoryModule {}

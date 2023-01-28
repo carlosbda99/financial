@@ -7,17 +7,14 @@ import { isNotNullOrUndefined } from '../shared/utils';
 import { FinancialApiService } from './financial-api.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService extends FinancialApiService {
-
   private auth$: Subject<void> = new Subject();
   private revoke$: Subject<void> = new Subject();
   private _token?: string | undefined | null;
 
-  constructor(
-    http: HttpClient
-  ) {
+  constructor(http: HttpClient) {
     super('users', http);
   }
 
@@ -30,7 +27,9 @@ export class AuthService extends FinancialApiService {
   }
 
   get token(): string | undefined {
-    this._token = localStorage.getItem(environment.storage.tokenKey) as string | undefined;
+    this._token = localStorage.getItem(environment.storage.tokenKey) as
+      | string
+      | undefined;
 
     return this._token;
   }
@@ -41,24 +40,19 @@ export class AuthService extends FinancialApiService {
 
   auth(user: string, password: string): Observable<User[]> {
     // WARNING: This auth route is only for example purpose, use an secure auth route to login
-    return this.get<User[]>(
-      '',
-      {
-        login: user,
-        password
-      }
-    ).pipe(
-      tap(
-        users => {
-          if (users.length > 0) {
-            this.setTokenStorage('token');
-            this.setUserStorage(users[0]);
-            this.auth$.next();
-          } else throw new Error('User not authorized')
-        }
-      ),
+    return this.get<User[]>('', {
+      login: user,
+      password,
+    }).pipe(
+      tap((users) => {
+        if (users.length > 0) {
+          this.setTokenStorage('token');
+          this.setUserStorage(users[0]);
+          this.auth$.next();
+        } else throw new Error('User not authorized');
+      }),
       throwIfEmpty(() => new Error('User not authorized'))
-    )
+    );
   }
 
   revoke(): void {
@@ -68,7 +62,10 @@ export class AuthService extends FinancialApiService {
   }
 
   newUser(user: User): Observable<void> {
-    return this.post<User & {password: string}, void>('', { ...user, password: '123' })
+    return this.post<User & { password: string }, void>('', {
+      ...user,
+      password: '123',
+    });
   }
 
   private setTokenStorage(token: string): void {
