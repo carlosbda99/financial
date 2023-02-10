@@ -1,0 +1,38 @@
+<div class="full-page">
+  <nav class="navbar">
+    <div class="container-fluid row">
+      <div class="d-flex justify-content-between">
+        <h3
+          class="cursor-pointer"
+          routerLink="/"
+        >
+          Financial
+        </h3>
+        <div class="d-flex">
+          <button
+            class="btn btn-ternary me-2"
+            routerLink="/spent"
+          >
+            Gastos
+          </button>
+          <button
+            class="btn btn-ternary me-2"
+            routerLink="/category"
+          >
+            Categorias
+          </button>
+          <button
+            class="btn btn-ternary"
+            (click)="sair()"
+          >
+            Sair
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="p-2 flex-expand">
+    <ng-content></ng-content>
+  </div>
+  <div class="container-fluid">Footer</div>
+</div>

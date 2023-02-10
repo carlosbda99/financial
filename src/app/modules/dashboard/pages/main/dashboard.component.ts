@@ -7,14 +7,4 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
-  constructor(private authService: AuthService, private router: Router) {
-    authService.onRevoke.subscribe({
-      next: () => this.router.navigateByUrl(''),
-    });
-  }
-
-  sair(): void {
-    this.authService.revoke();
-  }
-}
+export class DashboardComponent {}

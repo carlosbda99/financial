@@ -19,7 +19,10 @@ export class SignupComponent {
   ) {
     this.form = formBuilder.group({
       name: [{ value: undefined, disabled: false }, Validators.required],
-      email: [{ value: undefined, disabled: false }, Validators.required],
+      email: [
+        { value: undefined, disabled: false },
+        [Validators.required, Validators.email],
+      ],
     });
   }
 

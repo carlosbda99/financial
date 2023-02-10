@@ -1,31 +1,54 @@
-<form [formGroup]="form">
-  <div>
-    <label for="name">Nome</label>
-    <input
-      type="text"
-      id="name"
-      formControlName="name"
-    />
-  </div>
+<div class="full-page d-flex centered">
+  <div class="container col-12 col-md-8 col-lg-4 card p-2">
+    <div class="card-title d-flex centered">
+      <h2>Olá, bem vindo!</h2>
+    </div>
+    <div class="card-body">
+      <form
+        [formGroup]="form"
+        class="d-flex centered flex-column"
+      >
+        <div class="mb-2">
+          <label
+            for="login"
+            class="form-label"
+            >Login</label
+          >
+          <input
+            type="text"
+            id="login"
+            formControlName="name"
+            class="form-control"
+          />
+        </div>
 
-  <div>
-    <label for="email">Email</label>
-    <input
-      type="email"
-      id="email"
-      formControlName="email"
-    />
-  </div>
+        <div class="mb-2">
+          <label
+            for="pass"
+            class="form-label"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+          />
+        </div>
 
-  <div>
-    <button
-      [disabled]="form.invalid"
-      (click)="salvar()"
-    >
-      Cadastrar
-    </button>
-    <a routerLink="/">
-      <button>Login</button>
-    </a>
+        <button
+          [disabled]="form.invalid"
+          (click)="salvar()"
+          class="btn btn-primary mb-2"
+        >
+          Cadastrar
+        </button>
+
+        <span>
+          Já tem cadastro?
+          <a routerLink="/auth"> Então faça login</a>
+        </span>
+      </form>
+    </div>
   </div>
-</form>
+</div>

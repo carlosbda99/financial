@@ -1,0 +1,30 @@
+.centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.full-page {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card,
+.navbar {
+  background-color: darkorange;
+}
+
+.flex-expand {
+  align-items: stretch;
+  flex-grow: 1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn-ternary,
+.btn-ternary:hover {
+  color: white;
+}
